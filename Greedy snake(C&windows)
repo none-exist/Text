@@ -1,0 +1,49 @@
+#Refer to this link: https://blog.csdn.net/huangblog/article/details/8294326
+#include<stdio.h>
+#include<windows>
+#include<conio.h>
+#include<time.h>
+//游戏窗口
+#define FrameX 4 //游戏窗口左上角的X轴坐标
+#define FrameY 4 //游戏窗口左上角的Y轴坐标
+#define Frame_height 20 //游戏窗口的高度
+#define Frame_width 20 //游戏窗口的宽度
+
+//定义全局变量
+
+int i,j,a[2]; //用于记住蛇尾的坐标，其中a[0]、a[1]分别为横、竖坐标
+
+//生命蛇的结构体
+struct Snake
+{
+	int x[100]; //蛇的横坐标，其中x[0]表示蛇尾的横坐标，X[N-1]表示蛇头的横坐标
+	int y[100]; //蛇的竖坐标，其中y[0]表示蛇尾的竖坐标，Y[N-1]表示蛇头的竖坐标
+	int count; //蛇吃食物的个数
+	int length; //设的长度
+	int speed; //蛇的速度
+	}
+	
+//声明事物的结构体
+
+struct Food
+{
+	int x; //食物的横坐标
+	int y; //食物的纵坐标
+	};
+	
+void main()
+{
+	system("color 0D"); //设置文本为粉红色
+	start_game();//开始游戏
+	over_game(); //结束游戏
+	}
+/************光标移动到指定位置*****************/
+void gotxy(HANDLE hOut,int x,int y)
+{
+	COORD pos;
+	pos.X;//横坐标
+	pos.Y;//纵坐标
+	SetConsoleCursorPosition(hOut,pos);
+	}
+
+continue...
